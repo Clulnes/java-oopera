@@ -1,11 +1,10 @@
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Show {
-    private String title;
-    private int duration;
-    private ArrayList<Actor> listOfActors;
-    private Director director;
+    protected String title;
+    protected int duration;
+    protected ArrayList<Actor> listOfActors;
+    protected Director director;
 
 
     public Show(String title, int duration, ArrayList<Actor> listOfActors, Director director) {
@@ -19,16 +18,10 @@ public class Show {
         return title;
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public ArrayList<Actor> getListOfActors() {
-        return listOfActors;
-    }
-
-    public String getLibrettoText() {
-        return "У данного спектакля нет либретто.";
+    public void listOfActors() {
+        for (Actor actor : listOfActors) {
+            System.out.println(actor);
+        }
     }
 
     public Director getDirector() {
@@ -54,7 +47,6 @@ public class Show {
         }
 
         if (index != -1) {
-            Actor OldListOfActors = listOfActors.get(index);
             if (listOfActors.contains(replacementActor)) {
                 System.out.println(replacementActor + " уже участвует в спектакле.");
                 return;

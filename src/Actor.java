@@ -1,8 +1,10 @@
 import java.util.Objects;
 
 public class Actor extends Person{
+    protected int height;
     public Actor (String name, String surname, int height, Gender gender) {
-        super(name, surname, height, gender);
+        super(name, surname, gender);
+        this.height = height;
     }
 
     @Override
@@ -22,5 +24,9 @@ public class Actor extends Person{
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getSurname(), getHeight());
+    }
+
+    public int getHeight() {
+        return height;
     }
 }
